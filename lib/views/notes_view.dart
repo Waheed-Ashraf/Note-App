@@ -16,7 +16,12 @@ class NotesView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              const CustomAppBar(),
+              CustomAppBar(
+                  title: 'Note App',
+                  icon: Icon(
+                    Icons.search,
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                  )),
               Expanded(
                 child: ListView.builder(itemBuilder: (context, index) {
                   return CustomNoteItem();

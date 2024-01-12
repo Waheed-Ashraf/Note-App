@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
-
+  const CustomAppBar({super.key, required this.title, required this.icon});
+  final String title;
+  final Icon icon;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -10,7 +11,7 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         children: [
           Text(
-            'Note App',
+            title,
             style: TextStyle(
               fontFamily: 'RubikDoodleShadow',
               fontSize: 25,
@@ -26,8 +27,8 @@ class CustomAppBar extends StatelessWidget {
               color:
                   Theme.of(context).colorScheme.inversePrimary.withOpacity(.05),
             ),
-            child: const Center(
-              child: Icon(Icons.search),
+            child: Center(
+              child: icon,
             ),
           ),
         ],

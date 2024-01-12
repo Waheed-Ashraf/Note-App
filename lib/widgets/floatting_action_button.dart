@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/widgets/bottom_sheet_container.dart';
+import 'package:note_app/widgets/custom_text_field.dart';
 
 class FloattingActionButton extends StatelessWidget {
   const FloattingActionButton({super.key});
@@ -10,17 +12,11 @@ class FloattingActionButton extends StatelessWidget {
         showBottomSheet(
           context: context,
           builder: (context) {
-            return Container(
-              height: 300,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: Theme.of(context).colorScheme.onPrimary,
-              ),
-            );
+            return const BottomSheetContainer();
           },
         );
       },
-      backgroundColor: Theme.of(context).colorScheme.inverseSurface,
+      backgroundColor: Theme.of(context).colorScheme.secondary,
       child: Icon(
         Icons.add,
         color: Theme.of(context).colorScheme.onPrimary,
