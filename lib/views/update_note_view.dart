@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/widgets/custom_appbar.dart';
+import 'package:note_app/widgets/custom_text_field.dart';
 
 class UpdateNoteView extends StatelessWidget {
   const UpdateNoteView({super.key});
@@ -19,6 +20,14 @@ class UpdateNoteView extends StatelessWidget {
                   color: Theme.of(context).colorScheme.inversePrimary,
                 ),
               ),
+              const SizedBox(
+                height: 16,
+              ),
+              const CustomTextField(hint: 'title', maxLines: 1),
+              const SizedBox(
+                height: 16,
+              ),
+              const CustomTextField(hint: 'constent', maxLines: 5),
             ],
           ),
         ),
