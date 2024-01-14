@@ -9,7 +9,8 @@ class FloattingActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        showBottomSheet(
+        showModalBottomSheet(
+          isScrollControlled: true,
           context: context,
           builder: (context) {
             return const BottomSheetContainer();

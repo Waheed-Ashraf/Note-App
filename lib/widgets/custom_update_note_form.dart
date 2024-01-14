@@ -34,6 +34,9 @@ class _CustomUpdateNoteFormState extends State<CustomUpdateNoteForm> {
               },
               hint: 'constent',
               maxLines: 5),
+          const SizedBox(
+            height: 16,
+          ),
           CustomButton(
             onTap: () {
               if (formKey.currentState!.validate()) {
@@ -44,9 +47,6 @@ class _CustomUpdateNoteFormState extends State<CustomUpdateNoteForm> {
                 setState(() {});
               }
             },
-          ),
-          const SizedBox(
-            height: 16,
           ),
         ],
       ),
