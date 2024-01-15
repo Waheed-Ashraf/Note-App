@@ -13,7 +13,9 @@ class CustomNoteItem extends StatelessWidget {
       onTap: () {
         Navigator.push(context, MaterialPageRoute(
           builder: (context) {
-            return const UpdateNoteView();
+            return UpdateNoteView(
+              note: note,
+            );
           },
         ));
       },

@@ -21,9 +21,12 @@ class NotesView extends StatelessWidget {
             children: [
               CustomAppBar(
                   title: 'Note App',
-                  icon: Icon(
-                    Icons.search,
-                    color: Theme.of(context).colorScheme.inversePrimary,
+                  icon: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.search,
+                      color: Theme.of(context).colorScheme.inversePrimary,
+                    ),
                   )),
               const Expanded(
                 child: NotsViewList(),
