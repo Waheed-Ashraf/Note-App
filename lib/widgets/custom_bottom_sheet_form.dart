@@ -53,7 +53,7 @@ class _CustomBottomSheetFormState extends State<CustomBottomSheetForm> {
                 formKey.currentState!.save();
                 var currentDate = DateTime.now();
                 var formattedCurrentDate =
-                    DateFormat('dd/mm  hh:mm').format(currentDate);
+                    DateFormat('dd-MM / hh:mm').format(currentDate);
                 NoteModel noteModel = NoteModel(
                   color: Colors.teal.value,
                   date: formattedCurrentDate.toString(),

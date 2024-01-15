@@ -11,27 +11,24 @@ class NotesView extends StatelessWidget {
   const NotesView({super.key});
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NoteCubit(),
-      child: Scaffold(
-        floatingActionButton: const FloattingActionButton(),
-        backgroundColor: Theme.of(context).colorScheme.background,
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              children: [
-                CustomAppBar(
-                    title: 'Note App',
-                    icon: Icon(
-                      Icons.search,
-                      color: Theme.of(context).colorScheme.inversePrimary,
-                    )),
-                const Expanded(
-                  child: NotsViewList(),
-                ),
-              ],
-            ),
+    return Scaffold(
+      floatingActionButton: const FloattingActionButton(),
+      backgroundColor: Theme.of(context).colorScheme.background,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          child: Column(
+            children: [
+              CustomAppBar(
+                  title: 'Note App',
+                  icon: Icon(
+                    Icons.search,
+                    color: Theme.of(context).colorScheme.inversePrimary,
+                  )),
+              const Expanded(
+                child: NotsViewList(),
+              ),
+            ],
           ),
         ),
       ),

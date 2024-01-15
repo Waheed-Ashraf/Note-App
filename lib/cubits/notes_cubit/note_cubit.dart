@@ -29,6 +29,9 @@ class NoteCubit extends Cubit<NoteState> {
     List<NoteModel> notes = noteBox.values.toList();
 
 
+    emit(NoteLoadedSuccessfully());
+
+
     return notes;
 
   }
