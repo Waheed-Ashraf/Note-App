@@ -7,6 +7,7 @@ import 'package:note_app/views/update_note_view.dart';
 class CustomNoteItem extends StatelessWidget {
   const CustomNoteItem({super.key, required this.note});
   final NoteModel note;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -53,7 +54,10 @@ class CustomNoteItem extends StatelessWidget {
                       note.delete();
                       BlocProvider.of<NoteCubit>(context).fetchNotes();
                     },
-                    icon: const Icon(Icons.delete),
+                    icon: Icon(
+                      Icons.delete,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
                   ),
                 ),
               ),

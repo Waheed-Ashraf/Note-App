@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:note_app/constants.dart';
 import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/widgets/custom_button.dart';
@@ -17,6 +18,7 @@ class _CustomBottomSheetFormState extends State<CustomBottomSheetForm> {
   final GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, subtitle;
+  Color randomColor = ColorUtils.getRandomColor();
 
   @override
   Widget build(BuildContext context) {
@@ -53,9 +55,9 @@ class _CustomBottomSheetFormState extends State<CustomBottomSheetForm> {
                 formKey.currentState!.save();
                 var currentDate = DateTime.now();
                 var formattedCurrentDate =
-                    DateFormat('dd-MM / hh:mm').format(currentDate);
+                    DateFormat('dd/MM/yyyy').format(currentDate);
                 NoteModel noteModel = NoteModel(
-                  color: Colors.teal.value,
+                  color: randomColor.value,
                   date: formattedCurrentDate.toString(),
                   subtitle: subtitle!,
                   title: title!,

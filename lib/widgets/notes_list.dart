@@ -13,6 +13,7 @@ class NotsViewList extends StatelessWidget {
       builder: (context, state) {
         List<NoteModel> note = BlocProvider.of<NoteCubit>(context).fetchNotes();
         return ListView.builder(
+            physics: const BouncingScrollPhysics(),
             itemCount: note.length,
             itemBuilder: (context, index) {
               return CustomNoteItem(
