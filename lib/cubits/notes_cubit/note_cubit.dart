@@ -36,5 +36,20 @@ class NoteCubit extends Cubit<NoteState> {
 
   }
 
+
+  void deleteNote(NoteModel note) {
+
+    try {
+
+      note.delete();
+
+    } catch (e) {
+
+      print("there is an error $e");
+
+    }
+
+  }
+
 }
 

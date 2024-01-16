@@ -23,27 +23,33 @@ class CustomTextField extends StatelessWidget {
           return null;
         }
       },
+      style: TextStyle(
+        color: Theme.of(context).colorScheme.secondary,
+      ),
       onChanged: onChanged,
       cursorColor: Theme.of(context).colorScheme.secondary,
       maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hint,
+        hintStyle: TextStyle(
+          color: Theme.of(context).colorScheme.secondary,
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(
-            color: Theme.of(context).colorScheme.tertiary,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(
-            color: Theme.of(context).colorScheme.tertiary,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(
-            color: Theme.of(context).colorScheme.secondary,
+            color: Theme.of(context).colorScheme.tertiary,
           ),
         ),
       ),

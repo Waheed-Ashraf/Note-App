@@ -16,8 +16,26 @@ class NotsViewList extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             itemCount: note.length,
             itemBuilder: (context, index) {
-              return CustomNoteItem(
-                note: note[index],
+              return Dismissible(
+                key: Key(note[index].subtitle),
+                background: Container(
+                  height: 20,
+                  // color: Colors.red,
+                  alignment: Alignment.centerRight,
+                  padding: const EdgeInsets.only(
+                    right: 16,
+                  ),
+                  child: Icon(
+                    Icons.delete,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+                ),
+                onDismissed: (direction) {
+                  BlocProvider.of<NoteCubit>(context).deleteNote(note[index]);
+                },
+                child: CustomNoteItem(
+                  note: note[index],
+                ),
               );
             });
       },

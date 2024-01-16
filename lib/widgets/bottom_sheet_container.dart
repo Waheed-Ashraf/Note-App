@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:note_app/cubits/notes_cubit/note_cubit.dart';
 import 'package:note_app/widgets/custom_bottom_sheet_form.dart';
@@ -42,11 +41,8 @@ class BottomSheetContainer extends StatelessWidget {
               BlocProvider.of<NoteCubit>(context).fetchNotes();
             },
             builder: (context, state) {
-              return ModalProgressHUD(
-                inAsyncCall: state is AddNoteLoading ? true : false,
-                child:
-                    const SingleChildScrollView(child: CustomBottomSheetForm()),
-              );
+              return const SingleChildScrollView(
+                  child: CustomBottomSheetForm());
             },
           ),
         ),
